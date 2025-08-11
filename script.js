@@ -1,36 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LinkUp Login</title>
+window.onload = () => {
+  const auth = firebase.auth();
 
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const signupBtn = document.getElementById('signup-btn');
+  const loginBtn = document.getElementById('login-btn');
+  const messageP = document.getElementById('message');
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyCIEnyYxcKS5oDAv7-JZlIsiOm8v8s58uY",
-      authDomain: "linkup-ae04c.firebaseapp.com",
-      projectId: "linkup-ae04c",
-      storageBucket: "linkup-ae04c.firebasestorage.app",
-      messagingSenderId: "437321998115",
-      appId: "1:437321998115:web:774298afbb25930dee7696"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script>
-</head>
-<body>
-  <h1>LinkUp Login / Signup</h1>
+  signupBtn.onclick = () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    if (!email || !password) {
+      messageP.textContent = "Please enter email and password.";
+      return;
+    }
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(userCred => {
+        messageP.textContent = `Sign Up Successful! Welcome, ${userCred.user.email}`;
+      })
+      .catch(e => {
+        messageP.textContent = `Error: ${e.message}`;
+      });
+  };
 
-  <input type="email" id="email" placeholder="Email" />
-  <input type="password" id="password" placeholder="Password" />
-
-  <button id="signup-btn">Sign Up</button>
-  <button id="login-btn">Log In</button>
-
-  <p id="message"></p>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  loginBtn.onclick = () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    if (!email || !password) {
+      messageP.textContent = "Please enter email and password.";
+      return;
+    }
+    auth.signInWithEmailAndPassword(email, password)
+      .then(userCred => {
+        messageP.textContent = `Logged In! Welcome back, ${userCred.user.email}`;
+      })
+      .catch(e => {
+        messageP.textContent = `Error: ${e.message}`;
+      });
+  };
+};
