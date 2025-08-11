@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LinkUp Login</title>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Firebase SDK scripts -->
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
@@ -27,14 +30,15 @@
 <body>
   <h1>LinkUp Login / Signup</h1>
 
-  <input type="email" id="email" placeholder="Email" />
-  <input type="password" id="password" placeholder="Password" />
+  <input type="email" id="email" placeholder="Email" autocomplete="username" />
+  <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
 
   <button id="signup-btn">Sign Up</button>
   <button id="login-btn">Log In</button>
 
   <p id="message"></p>
 
+  <!-- Link to your JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
