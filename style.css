@@ -1,50 +1,73 @@
+/* Body with a smooth gradient background and centered content */
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
 }
 
-#auth-container, #app-container {
-  max-width: 500px;
-  margin: auto;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fafafa;
+/* Main heading with shadow and spacing */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-input, textarea, button {
-  width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-button {
-  cursor: pointer;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #2563eb;
-}
-
-.post {
-  border: 1px solid #ccc;
-  padding: 10px;
+/* Style inputs with subtle shadows and rounded corners */
+input[type="email"],
+input[type="password"] {
+  width: 280px;
+  padding: 14px 16px;
   margin: 10px 0;
-  border-radius: 5px;
-  background: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
+  color: #333;
 }
 
-.post .post-text {
-  margin-bottom: 8px;
+/* Input focus effect */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0 0 8px 3px #ffd700;
+  background-color: #fff;
 }
 
-.post button {
-  width: auto;
-  padding: 6px 12px;
-  margin-right: 5px;
+/* Buttons with gradient background, rounded pill shape, and shadow */
+button {
+  width: 300px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  box-shadow: 0 6px 15px rgba(255, 75, 43, 0.6);
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  box-shadow: 0 8px 20px rgba(255, 65, 92, 0.8);
+}
+
+/* Message styling with subtle shadow and spacing */
+#message {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  min-height: 1.5em;
+  text-align: center;
 }
