@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LinkUp Social</title>
+  <title>LinkUp Login</title>
 
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"></script>
 
   <script>
     const firebaseConfig = {
@@ -21,30 +17,19 @@
       messagingSenderId: "437321998115",
       appId: "1:437321998115:web:774298afbb25930dee7696"
     };
-
     firebase.initializeApp(firebaseConfig);
   </script>
 </head>
 <body>
+  <h1>LinkUp Login / Signup</h1>
 
-  <div id="auth-container">
-    <h2>Login / Sign Up</h2>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="signup-btn">Sign Up</button>
-    <button id="login-btn">Log In</button>
-    <p id="auth-message"></p>
-    <button id="logout-btn" style="display:none;">Log Out</button>
-  </div>
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="password" placeholder="Password" />
 
-  <div id="app-container" style="display:none;">
-    <h2>Welcome, <span id="user-email"></span>!</h2>
-    <textarea id="post-input" placeholder="Write something..."></textarea><br />
-    <button id="add-post-btn">Add Post</button>
+  <button id="signup-btn">Sign Up</button>
+  <button id="login-btn">Log In</button>
 
-    <h3>Posts</h3>
-    <div id="posts-list"></div>
-  </div>
+  <p id="message"></p>
 
   <script src="script.js"></script>
 </body>
