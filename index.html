@@ -3,22 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Social Website</title>
+  <title>LinkUp</title>
+
+  <!-- Your CSS file -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDK scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js"></script>
+
+  <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCIEnyYxcKS5oDAv7-JZlIsiOm8v8s58uY",
+      authDomain: "linkup-ae04c.firebaseapp.com",
+      projectId: "linkup-ae04c",
+      storageBucket: "linkup-ae04c.firebasestorage.app",
+      messagingSenderId: "437321998115",
+      appId: "1:437321998115:web:774298afbb25930dee7696"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Social Website</h1>
-  </header>
+  <h1>Welcome to LinkUp</h1>
+  <p>Your social app starts here.</p>
 
-  <main>
-    <p>This is your homepage. Start building your awesome social site here!</p>
-  </main>
+  <!-- Your content will go here -->
 
-  <footer>
-    <p>© 2025 Your Website</p>
-  </footer>
-
+  <!-- Your JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
