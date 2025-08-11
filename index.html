@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LinkUp</title>
+  <title>LinkUp Social</title>
 
-  <!-- Your CSS file -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Firebase SDK scripts -->
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js"></script>
 
   <script>
-    // Your Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyCIEnyYxcKS5oDAv7-JZlIsiOm8v8s58uY",
       authDomain: "linkup-ae04c.firebaseapp.com",
@@ -25,28 +22,30 @@
       appId: "1:437321998115:web:774298afbb25930dee7696"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script>
 </head>
 <body>
-  <h1>Welcome to LinkUp</h1>
-  <p>Your social app starts here.</p>
-<div id="auth-container">
+
+  <div id="auth-container">
     <h2>Login / Sign Up</h2>
-    
     <input type="email" id="email" placeholder="Email" />
     <input type="password" id="password" placeholder="Password" />
-    
     <button id="signup-btn">Sign Up</button>
     <button id="login-btn">Log In</button>
-    
     <p id="auth-message"></p>
+    <button id="logout-btn" style="display:none;">Log Out</button>
   </div>
-  <!-- Your content will go here -->
 
-  <!-- Your JavaScript file -->
+  <div id="app-container" style="display:none;">
+    <h2>Welcome, <span id="user-email"></span>!</h2>
+    <textarea id="post-input" placeholder="Write something..."></textarea><br />
+    <button id="add-post-btn">Add Post</button>
+
+    <h3>Posts</h3>
+    <div id="posts-list"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
